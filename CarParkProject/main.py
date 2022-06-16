@@ -6,7 +6,8 @@ import numpy as np
 # Video feed
 cap = cv2.VideoCapture(0)
 # ganti path sesuai lokasi file
-with open('C:/Users/user/Desktop/New folder/CarParkProject/CarParkProject/CarParkPos.', 'rb') as f: 
+for filename in filenames:
+ with open('CarParkPos.', 'rb') as f: 
     posList = pickle.load(f)
  
 width, height = 45,80
