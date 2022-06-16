@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bl!8ewxv2umk5)^e&s)=uhhm6fh(1gx!^dj$w)b2qr)u5feymc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = true
 
 ALLOWED_HOSTS = ['127.0.0.1','https://projectbisa.herokuapp.com']
 
@@ -118,8 +118,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+STATIC_TMP = os.path.join(BASE_DIR, 'static')
+
+os.makedirs(STATIC_TMP, exist_ok=True)
+os.makedirs(STATIC_ROOT, exist_ok=True)
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
+    (BASE_DIR,'static')
 ]
 
 # Default primary key field type
